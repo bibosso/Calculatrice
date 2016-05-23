@@ -29,7 +29,12 @@ class Form(QWidget, Ui_Form):
         """
         Slot documentation goes here.
         """
-        pass
+        if (self.textEdit.toPlainText()[-1:]) == "\n":
+            try:
+                self.lineEdit.setText(str(self.nsp.eval(self.textEdit.toPlainText().replace("\n", "").replace("\r", "").replace("\r\n", ""))))
+            except:
+                pass
+    
     
     @pyqtSignature("QString")
     def on_lineEdit_textChanged(self, p0):
@@ -195,7 +200,11 @@ class Form(QWidget, Ui_Form):
         """
         Slot documentation goes here.
         """
-        self.lineEdit.setText(str(self.nsp.eval(self.textEdit.toPlainText().replace("\n", "").replace("\r", "").replace("\r\n", ""))))
+        try:
+            self.lineEdit.setText(str(self.nsp.eval(self.textEdit.toPlainText().replace("\n", "").replace("\r", "").replace("\r\n", ""))))
+        except:
+            pass
+            
     
     ################################################################## cos ###################################################
     @pyqtSignature("")
