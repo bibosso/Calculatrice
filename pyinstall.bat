@@ -1,0 +1,2 @@
+cd /d %~dp0
+"C:\Users\Bibosso\Anaconda3\Scripts\pyinstaller.exe" "C:\Users\Bibosso\Desktop\Programmes\Calculatrice\main.py" --distpath "C:\Users\Bibosso\Desktop\Programmes\Calculatrice\dist" -p "C:\Users\Bibosso\Desktop\Programmes\Calculatrice\GUI" -w
